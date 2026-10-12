@@ -33,12 +33,10 @@ class TahunAjaranController extends Controller
                 // Ambil status mahasiswa untuk tahun aktif
                $status = StatusMahasiswaModel::with('mahasiswa')
                                     ->where('id_thn_ajaran', $thn->id)
-                                    ->where('status', '!=', 4)
+                                    ->where('status', '!=', 4) // tidak aktif
                                     ->whereHas('mahasiswa', function ($query) {
-                                        $query->where('bol_lulus', '!=', 1)
-                                        ->orWhere('bol_lulus', '!=', 5)
-                                        ->orWhere('bol_lulus', '!=', 3);
-                                    })
+                                            $query->whereNotIn('bol_lulus', [1, 5, 3]);
+                                        })
                                     ->get();
 
                 // Nonaktifkan semua tahun ajaran
