@@ -1,0 +1,43 @@
+[21-Jul-2025 04:23:16 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Hash as Hash because the name is already in use in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PerusahaanController.php on line 13
+[21-Jul-2025 04:23:44 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Hash as Hash because the name is already in use in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PerusahaanController.php on line 13
+[21-Jul-2025 04:24:54 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Hash as Hash because the name is already in use in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PerusahaanController.php on line 13
+[21-Jul-2025 04:25:30 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Hash as Hash because the name is already in use in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PerusahaanController.php on line 13
+[21-Jul-2025 04:26:06 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Hash as Hash because the name is already in use in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PerusahaanController.php on line 13
+[21-Jul-2025 05:18:54 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Hash as Hash because the name is already in use in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PerusahaanController.php on line 13
+[22-Jul-2025 06:52:33 UTC] PHP Fatal error:  Cannot use empty array elements in arrays in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PerusahaanController.php on line 148
+[14-Aug-2025 14:04:39 Asia/Makassar] PHP Fatal error:  Cannot use App\Models\User as User because the name is already in use in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PekerjaController.php on line 22
+[14-Aug-2025 14:04:39 Asia/Makassar] PHP Fatal error:  Cannot use App\Models\User as User because the name is already in use in /home/yuivysny/apijob.miraiakademi.com/app/Http/Controllers/PekerjaController.php on line 22
+[24-Nov-2025 17:51:06 Asia/Makassar] PHP Fatal error:  Uncaught ErrorException: Cannot modify header information - headers already sent by (output started at /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php:387) in /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php:322
+Stack trace:
+#0 /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#2 /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php(322): header()
+#3 /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php(401): Symfony\Component\HttpFoundation\Response->sendHeaders()
+#4 /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(219): Symfony\Component\HttpFoundation\Response->send()
+#5 /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#6 /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#7 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#8 {main}
+  thrown in /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php on line 322
+[24-Nov-2025 17:52:38 Asia/Makassar] PHP Fatal error:  Uncaught ErrorException: Cannot modify header information - headers already sent by (output started at /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php:387) in /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php:322
+Stack trace:
+#0 /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#2 /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php(322): header()
+#3 /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php(401): Symfony\Component\HttpFoundation\Response->sendHeaders()
+#4 /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(219): Symfony\Component\HttpFoundation\Response->send()
+#5 /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(196): Illuminate\Foundation\Bootstrap\HandleExceptions->renderHttpResponse()
+#6 /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(256): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#7 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#8 {main}
+  thrown in /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/http-foundation/Response.php on line 322
+[14-Jan-2026 10:59:49 Asia/Makassar] PHP Fatal error:  Cannot redeclare App\Http\Controllers\KeuanganMbc::getTagihanKhusus() in /home/suaraumm/cashier.kuliahkerja.com/app/Http/Controllers/KeuanganMbc.php on line 1742
+[14-Jan-2026 10:59:59 Asia/Makassar] PHP Fatal error:  Cannot redeclare App\Http\Controllers\KeuanganMbc::getTagihanKhusus() in /home/suaraumm/cashier.kuliahkerja.com/app/Http/Controllers/KeuanganMbc.php on line 1742
+[14-Jan-2026 11:00:02 Asia/Makassar] PHP Fatal error:  Cannot redeclare App\Http\Controllers\KeuanganMbc::getTagihanKhusus() in /home/suaraumm/cashier.kuliahkerja.com/app/Http/Controllers/KeuanganMbc.php on line 1742
+[14-Jan-2026 11:00:09 Asia/Makassar] PHP Fatal error:  Cannot redeclare App\Http\Controllers\KeuanganMbc::getTagihanKhusus() in /home/suaraumm/cashier.kuliahkerja.com/app/Http/Controllers/KeuanganMbc.php on line 1742
+[14-Jan-2026 11:00:50 Asia/Makassar] PHP Fatal error:  Cannot redeclare App\Http\Controllers\KeuanganMbc::getTagihanKhusus() in /home/suaraumm/cashier.kuliahkerja.com/app/Http/Controllers/KeuanganMbc.php on line 1742
+[14-Jan-2026 11:01:59 Asia/Makassar] PHP Fatal error:  Cannot redeclare App\Http\Controllers\KeuanganMbc::getTagihanKhusus() in /home/suaraumm/cashier.kuliahkerja.com/app/Http/Controllers/KeuanganMbc.php on line 1742
+[14-Jan-2026 11:06:27 Asia/Makassar] PHP Fatal error:  Cannot redeclare App\Http\Controllers\KeuanganMbc::getTagihanKhusus() in /home/suaraumm/cashier.kuliahkerja.com/app/Http/Controllers/KeuanganMbc.php on line 1742
+[23-Jan-2026 14:19:31 Asia/Makassar] PHP Fatal error:  Cannot redeclare App\Http\Controllers\MahasiswaController::destroy() in /home/suaraumm/cashier.kuliahkerja.com/app/Http/Controllers/MahasiswaController.php on line 252
+[29-Jan-2026 14:24:36 Asia/Makassar] PHP Fatal error:  Maximum call stack size of 8339456 bytes (zend.max_allowed_stack_size - zend.reserved_stack_size) reached during compilation. Try splitting expression in /home/suaraumm/cashier.kuliahkerja.com/vendor/laravel/framework/src/Illuminate/Log/LogManager.php on line 75
+[29-Jan-2026 14:44:49 Asia/Makassar] PHP Fatal error:  Maximum execution time of 60 seconds exceeded in /home/suaraumm/cashier.kuliahkerja.com/vendor/symfony/error-handler/ErrorRenderer/HtmlErrorRenderer.php on line 257

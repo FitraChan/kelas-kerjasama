@@ -1,0 +1,152 @@
+.page-home {
+    h3 {
+        margin-bottom: 15px;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 300px;
+        color: #979797;
+    }
+
+    .banner-carousel {
+        margin-bottom: -70px;
+        margin-top: -30px;
+    }
+
+    .hero {
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .fitur {
+        img {
+            max-height: 45px;
+        }
+
+        h5 {
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #1CBBE8;
+        }
+
+        p {
+            font-size: 13px;
+            color: #979797;
+        }
+    }
+
+    .keahlian {
+        margin-top: 50px;
+
+        h5 {
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 13px;
+            color: #979797;
+        }
+    }
+
+    .component-jurusan {
+        margin-bottom: 20px;
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        .jurusan-thumbnail {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+
+            &:hover,
+            &:focus {
+                .jurusan-image {
+                    transform: scale(1.1);
+                }
+            }
+
+            .jurusan-image {
+                width: 100%;
+                height: 100%;
+
+                background-color: #dddddd;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                transition: all 0.3s ease;
+            }
+        }
+
+        .jurusan-text {
+            font-weight: normal;
+            font-size: 15px;
+            margin-top: 12px;
+            color: #0C0D36;
+        }
+
+    }
+
+    .register {
+        img {
+            max-height: 500px;
+        }
+
+        @include media-breakpoint-down(md) {
+            img {
+                max-height: 400px;
+                align-items: center;
+            }
+        }
+    }
+
+    .btn-regist {
+        background: linear-gradient(90deg, #00FD96 -29.37%, rgba(0, 172, 236, 0.88) 100%);
+        border-radius: 10px;
+        width: 30%;
+        border: none;
+
+        text-decoration: none;
+        color: #ffffff;
+    }
+
+    .testimoni {
+
+        .component-testimoni {
+            margin-bottom: -70px;
+
+            .testimoni-thumbnail {
+                width: 100%;
+                height: 250px;
+                border-radius: 8px;
+
+                overflow: hidden;
+                position: relative;
+                z-index: 1;
+
+            }
+
+
+        }
+    }
+
+    .kontak {
+
+        margin-top: 30px;
+
+        img {
+            max-height: 50px;
+            padding-right: 30px;
+        }
+    }
+
+}

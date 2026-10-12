@@ -1,0 +1,23 @@
+.login {
+    img {
+        max-height: 350px;
+    }
+
+    @include media-breakpoint-down(sm) {
+        img {
+
+            max-width: 100%;
+            align-items: center;
+        }
+    }
+
+    .btn-signup {
+        @include button-variant(#f3f3f3, transparent);
+        color: #bbbbbb;
+
+        text-decoration: none;
+        font-color: #ffff;
+        padding: 5px;
+    }
+
+}
