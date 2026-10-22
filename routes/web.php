@@ -122,6 +122,12 @@ Route::middleware(['auth'])->group(function () {
 
     Route::post('updateLn', 'App\Http\Controllers\MahasiswaController@updateLn')->name('updateLn');
     Route::post('updateBolLulus', 'App\Http\Controllers\MahasiswaController@updateBolLulus')->name('updateBolLulus');
+
+    Route::post('updateNegaraTujuan', 'App\Http\Controllers\MahasiswaController@updateNegaraTujuan')->name('updateNegaraTujuan');
+
+    Route::post('updateStatusBerangkat', 'App\Http\Controllers\MahasiswaController@updateStatusBerangkat')->name('updateStatusBerangkat');
+
+
     Route::get('getTagihan/{id}', 'App\Http\Controllers\KeuanganMbc@getTagihan')->name('getTagihan');
     
     Route::get('getTagihanKhusus/{id}', 'App\Http\Controllers\KeuanganMbc@getTagihanKhusus')->name('getTagihanKhusus');

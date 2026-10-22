@@ -66,13 +66,13 @@
 
                   <div class="form-group col-md-12">
                     <label for="inputEmail4">Dari Semester</label>
-                    <input type="number" name="dari" value="" id="dari" class="form-control">
+                    <input type="number" name="dari" value="" id="dari" class="form-control" required>
                   </div>
 
 
                   <div class="form-group col-md-12">
                     <label for="inputEmail4">Sampai Semester</label>
-                    <input type="number" name="sampai" value="" id="sampai" class="form-control">
+                    <input type="number" name="sampai" value="" id="sampai" class="form-control" required>
                   </div>
 
 

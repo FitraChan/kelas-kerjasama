@@ -108,12 +108,12 @@
                       <select name="str_jurusan" class="form-control" required>
                         <option value="">-- Pilih Jurusan --</option>
                         @foreach ($jurusan as $jrs)
-                            <option value="{{ $jrs->kd_prodi }}"
-                                {{ $mhs->str_jurusan == $jrs->kd_prodi ? 'selected' : '' }}>
-                                {{ $jrs->nama_jurusan }}
-                            </option>
+                        <option value="{{ $jrs->kd_prodi }}"
+                          {{ $mhs->str_jurusan == $jrs->kd_prodi ? 'selected' : '' }}>
+                          {{ $jrs->nama_jurusan }}
+                        </option>
                         @endforeach
-                    </select>
+                      </select>
                     </div>
                     <div class="form-group col-md-6">
                       <label>Angkatan</label>
@@ -156,14 +156,14 @@
                         <option value="5" {{ $mhs->bol_lulus == 5 ? 'selected' : '' }}>Mengundurkan Diri</option>
                       </select>
                     </div>
-                    
+
                     <div class="form-group col-md-6">
-  <label>Nama Pendaftar</label>
-    <input type="text" id="nama_lengkap" class="form-control nama_lengkap" value="{{$mhs->pendaftaran->nama_lengkap ?? '' }}">
-    <input type="text" class="pendaftaran_id" name="id_kuliah_kerja" value="{{$mhs->pendaftaran->id_kuliah_kerja ?? ''}}" readonly>
+                      <label>Nama Pendaftar</label>
+                      <input type="text" id="nama_lengkap" class="form-control nama_lengkap" value="{{$mhs->pendaftaran->nama_lengkap ?? '' }}">
+                      <input type="text" class="pendaftaran_id" name="id_kuliah_kerja" value="{{$mhs->pendaftaran->id_kuliah_kerja ?? ''}}" readonly>
                     </div>
-                    
-                    
+
+
                   </div>
                 </div>
                 <div class="modal-footer">
@@ -181,42 +181,139 @@
           <button class="btn btn-primary" data-toggle="modal" data-target="#modalTambah">Tambah</button>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
-    <!--<button class="btn btn-primary mb-2" id="addBtn">Tambah Data</button>-->
-<!-- 0=Aktif;1=LULUS; 2=DO; 3=Keluar; 4=Meninggal;5=Mengundurkan Diri  -->
-    <!-- Dropdown ubah status -->
-    <div class="d-flex align-items-center gap-2 mb-2">
-      <select id="statusSelect" class="form-control" style="width: 200px;">
-        <option value="">-- Pilih Status Baru --</option>
-        <option value="0">Aktif</option>
+       {{-- Panel Aksi Mahasiswa --}}
+<div class="student-action-panel mb-4">
 
-        <option value="1">Lulus</option>
-        <option value="2">DO</option>
-        <option value="3">Keluar</option>
-        <option value="4">Meninggal</option>                
-        <option value="5">Mengundurkan Diri</option>
-
-      </select>
-      <button id="btnUpdateStatus" class="btn btn-success">Ubah Status</button>
+    <div class="student-action-header">
+        <div class="student-action-icon">
+            <i class="fas fa-users-cog"></i>
+        </div>
+        <div>
+            <h5 class="mb-1">Pengelolaan Mahasiswa</h5>
+            <p class="mb-0">Pilih data yang ingin diperbarui, lalu klik tombol aksi.</p>
+        </div>
     </div>
 
+    <div class="student-action-grid">
 
+        {{-- Status Mahasiswa --}}
+        <div class="student-action-card status-card">
+            <div class="action-card-heading">
+                <div class="action-icon">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <div>
+                    <h6>Status Mahasiswa</h6>
+                    <small>Perbarui status akademik</small>
+                </div>
+            </div>
 
-    <div class="d-flex align-items-center gap-2 mb-2">
-      <select id="statusSelectLn" class="form-control" style="width: 200px;">
-        <option value="">-- Pilih Status LN/REG --</option>
-       
-        <option value="1">Reguler</option>
-        <option value="2">Luar Negeri</option>
-        
+            <div class="action-card-body">
+                <select id="statusSelect" class="form-control">
+                    <option value="">-- Pilih Status --</option>
+                    <option value="0">Aktif</option>
+                    <option value="1">Lulus</option>
+                    <option value="2">DO</option>
+                    <option value="3">Keluar</option>
+                    <option value="4">Meninggal</option>
+                    <option value="5">Mengundurkan Diri</option>
+                </select>
 
-      </select>
-      <button id="btnUpdateStatusLn" class="btn btn-success">Ubah Status</button>
+                <button id="btnUpdateStatus" type="button" class="btn-action btn-status">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Ubah Status</span>
+                </button>
+            </div>
+        </div>
+
+        {{-- Negara Tujuan --}}
+        <div class="student-action-card negara-card">
+            <div class="action-card-heading">
+                <div class="action-icon">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <div>
+                    <h6>Negara Tujuan</h6>
+                    <small>Perbarui negara tujuan mahasiswa</small>
+                </div>
+            </div>
+
+            <div class="action-card-body">
+                <select id="negaraTujuanSelect" class="form-control">
+                    <option value="">-- Pilih Negara --</option>
+
+                    @foreach ($negara_tujuan as $negara)
+                        <option value="{{ $negara->id }}">
+                            {{ $negara->nama_negara }}
+                        </option>
+                    @endforeach
+                </select>
+
+                <button id="btnUpdateNegaraTujuan" type="button" class="btn-action btn-negara">
+                    <i class="fas fa-globe"></i>
+                    <span>Ubah Negara</span>
+                </button>
+            </div>
+        </div>
+
+        {{-- Status Berangkat --}}
+        <div class="student-action-card berangkat-card">
+            <div class="action-card-heading">
+                <div class="action-icon">
+                    <i class="fas fa-plane-departure"></i>
+                </div>
+                <div>
+                    <h6>Status Berangkat</h6>
+                    <small>Perbarui status keberangkatan</small>
+                </div>
+            </div>
+
+            <div class="action-card-body">
+                <select id="statusBerangkatSelect" class="form-control">
+                    <option value="">-- Pilih Status --</option>
+
+                    @foreach ($status_berangkat as $status)
+                        <option value="{{ $status->id }}">
+                            {{ $status->status }}
+                        </option>
+                    @endforeach
+                </select>
+
+                <button id="btnUpdateStatusBerangkat" type="button" class="btn-action btn-berangkat">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Ubah Status</span>
+                </button>
+            </div>
+        </div>
+
+        {{-- Status LN / REG --}}
+        <div class="student-action-card jenis-card">
+            <div class="action-card-heading">
+                <div class="action-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div>
+                    <h6>Jenis Mahasiswa</h6>
+                    <small>Reguler atau luar negeri</small>
+                </div>
+            </div>
+
+            <div class="action-card-body">
+                <select id="statusSelectLn" class="form-control">
+                    <option value="">-- Pilih Jenis --</option>
+                    <option value="1">Reguler</option>
+                    <option value="2">Luar Negeri</option>
+                </select>
+
+                <button id="btnUpdateStatusLn" type="button" class="btn-action btn-jenis">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>Ubah Jenis</span>
+                </button>
+            </div>
+        </div>
+
     </div>
-  
-
-   
-  </div>
+</div>
 
 
         <table class="table table-striped" id="mahasiswa">
@@ -229,6 +326,8 @@
               <th>Nama</th>
               <th>Status</th>
               <th>REG / LN</th>
+              <th>Negara Tujuan</th>
+              <th>Status Berangkat</th>
 
               <th>Action</th>
             </tr>
@@ -241,10 +340,9 @@
   </div>
 </div>
 <style>
-    
-    .ui-autocomplete {
+  .ui-autocomplete {
     z-index: 1055 !important;
-}
+  }
 </style>
 
 
@@ -257,7 +355,7 @@
 
 <!-- JQUERY UI -->
 <link rel="stylesheet"
-      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 
 
@@ -304,7 +402,11 @@
           searchable: false
         },
 
-        {data: 'checkbox', orderable: false, searchable: false},
+        {
+          data: 'checkbox',
+          orderable: false,
+          searchable: false
+        },
 
         {
           data: 'str_nim',
@@ -319,7 +421,7 @@
           name: 'bol_lulus',
           render: function(data, type, row) {
 
-          console.log('DATA STATUS:', data);
+            console.log('DATA STATUS:', data);
             switch (data) {
               case 0:
                 return 'Aktif';
@@ -351,141 +453,230 @@
         // { data: 'str_jurusan', name: 'str_jurusan' },
         //  { data: 'str_angkatan', name: 'str_angkatan' },
         // { data: 'status', name: 'status' },
+
+        {
+            data: 'nama_negara',
+            name: 'negaraTujuan.nama_negara',
+            defaultContent: '-'
+        },
+        {
+            data: 'status_berangkat',
+            name: 'statusBerangkat.status',
+            defaultContent: '-'
+        },
         {
           data: 'action',
           name: 'action',
           orderable: false,
           searchable: false
         },
+        
       ]
     });
   });
 
-$('#btnUpdateStatus').click(function () {
+  $('#btnUpdateStatus').click(function() {
     let selected = [];
-    $('.row-checkbox:checked').each(function () {
-        selected.push($(this).val());
+    $('.row-checkbox:checked').each(function() {
+      selected.push($(this).val());
     });
-
-    console.log(selected);
     
-
     let newStatus = $('#statusSelect').val();
 
     if (selected.length === 0) {
-        alert('Pilih minimal satu mahasiswa!');
-        return;
+      alert('Pilih minimal satu mahasiswa!');
+      return;
     }
     if (!newStatus) {
-        alert('Pilih status baru terlebih dahulu!');
-        return;
+      alert('Pilih status baru terlebih dahulu!');
+      return;
     }
 
     $.ajax({
-        url: "{{ url('updateBolLulus') }}",
-        method: "POST",
-        data: {
-            _token: "{{ csrf_token() }}",
-            ids: selected,
-            status: newStatus
-        },
-        success: function (res) {
-            if (res.success) {
-                alert('Status berhasil diperbarui!');
-                table.ajax.reload(null, false);
-            } else {
-                alert(res.message || 'Gagal memperbarui status.');
-            }
-        },
-        error: function (err) {
-          console.log(err);
-          
-            alert('Terjadi kesalahan saat memperbarui status.');
+      url: "{{ url('updateBolLulus') }}",
+      method: "POST",
+      data: {
+        _token: "{{ csrf_token() }}",
+        ids: selected,
+        status: newStatus
+      },
+      success: function(res) {
+        if (res.success) {
+          alert('Status berhasil diperbarui!');
+          table.ajax.reload(null, false);
+        } else {
+          alert(res.message || 'Gagal memperbarui status.');
         }
+      },
+      error: function(err) {
+        console.log(err);
+
+        alert('Terjadi kesalahan saat memperbarui status.');
+      }
     });
-});
+  });
 
 
-$('#btnUpdateStatusLn').click(function () {
+  $('#btnUpdateStatusLn').click(function() {
     let selected = [];
-    $('.row-checkbox:checked').each(function () {
-        selected.push($(this).val());
+    $('.row-checkbox:checked').each(function() {
+      selected.push($(this).val());
     });
-
-    console.log(selected);
-    
+  
 
     let newStatus = $('#statusSelectLn').val();
 
     if (selected.length === 0) {
+      alert('Pilih minimal satu mahasiswa!');
+      return;
+    }
+    if (!newStatus) {
+      alert('Pilih status baru terlebih dahulu!');
+      return;
+    }
+
+    $.ajax({
+      url: "{{ url('updateLn') }}",
+      method: "POST",
+      data: {
+        _token: "{{ csrf_token() }}",
+        ids: selected,
+        status: newStatus
+      },
+      success: function(res) {
+        if (res.success) {
+          alert('Status berhasil diperbarui!');
+          table.ajax.reload(null, false);
+        } else {
+          alert(res.message || 'Gagal memperbarui status.');
+        }
+      },
+      error: function(err) {
+
+        console.log(err);
+
+        alert('Terjadi kesalahan saat memperbarui status.');
+      }
+    });
+  });
+
+  $(function() {
+    $(".nama_lengkap").autocomplete({
+      minLength: 2,
+      source: function(request, response) {
+
+        console.log('KEYWORD:', request.term);
+
+        $.ajax({
+          url: "{{ url('autocomplete') }}",
+          dataType: "json",
+          data: {
+            search: request.term
+          },
+          success: function(data) {
+
+            console.log('RESPONSE DARI SERVER:', data);
+            //  console.table(data); // 🔥 paling enak dibaca
+
+            response(data); // ini WAJIB
+          },
+          error: function(xhr) {
+            console.log('ERROR:', xhr.responseText);
+          }
+        });
+      },
+      select: function(event, ui) {
+        console.log('SELECTED ITEM:', ui.item);
+
+        $(this).val(ui.item.label);
+        $('.pendaftaran_id').val(ui.item.id);
+        return false;
+      }
+    });
+  });
+
+  $('#btnUpdateStatusBerangkat').click(function() {
+    let selected = [];
+
+    $('.row-checkbox:checked').each(function() {
+        selected.push($(this).val());
+    });
+
+    let newStatus = $('#statusBerangkatSelect').val();
+
+    if (selected.length === 0) {
         alert('Pilih minimal satu mahasiswa!');
         return;
     }
+
     if (!newStatus) {
-        alert('Pilih status baru terlebih dahulu!');
+        alert('Pilih status berangkat terlebih dahulu!');
         return;
     }
 
     $.ajax({
-        url: "{{ url('updateLn') }}",
+        url: "{{ url('updateStatusBerangkat') }}",
         method: "POST",
         data: {
             _token: "{{ csrf_token() }}",
             ids: selected,
             status: newStatus
         },
-        success: function (res) {
+        success: function(res) {
             if (res.success) {
-                alert('Status berhasil diperbarui!');
+                alert('Status berangkat berhasil diperbarui!');
                 table.ajax.reload(null, false);
             } else {
-                alert(res.message || 'Gagal memperbarui status.');
+                alert(res.message || 'Gagal memperbarui status berangkat.');
             }
         },
-        error: function (err) {
-
-          console.log(err);
-          
-            alert('Terjadi kesalahan saat memperbarui status.');
+        error: function(err) {
+            console.log(err);
+            alert('Terjadi kesalahan saat memperbarui status berangkat.');
         }
     });
 });
-  
-    $(function () {
-        $(".nama_lengkap").autocomplete({
-            minLength: 2,
-            source: function (request, response) {
-    
-                console.log('KEYWORD:', request.term);
-    
-                $.ajax({
-                    url: "{{ url('autocomplete') }}",
-                    dataType: "json",
-                    data: {
-                        search: request.term
-                    },
-                    success: function (data) {
-    
-                        console.log('RESPONSE DARI SERVER:', data);
-                      //  console.table(data); // 🔥 paling enak dibaca
-    
-                        response(data); // ini WAJIB
-                    },
-                    error: function (xhr) {
-                        console.log('ERROR:', xhr.responseText);
-                    }
-                });
-            },
-            select: function (event, ui) {
-                console.log('SELECTED ITEM:', ui.item);
-    
-                $(this).val(ui.item.label);
-                $('.pendaftaran_id').val(ui.item.id);
-                return false;
-            }
-        });
+
+$('#btnUpdateNegaraTujuan').click(function() {
+    let selected = [];
+
+    $('.row-checkbox:checked').each(function() {
+        selected.push($(this).val());
     });
 
-  
+    let negaraTujuan = $('#negaraTujuanSelect').val();
+
+    if (selected.length === 0) {
+        alert('Pilih minimal satu mahasiswa!');
+        return;
+    }
+
+    if (!negaraTujuan) {
+        alert('Pilih negara tujuan terlebih dahulu!');
+        return;
+    }
+
+    $.ajax({
+        url: "{{ url('updateNegaraTujuan') }}",
+        method: "POST",
+        data: {
+            _token: "{{ csrf_token() }}",
+            ids: selected,
+            negara_tujuan: negaraTujuan
+        },
+        success: function(res) {
+            if (res.success) {
+                alert('Negara tujuan berhasil diperbarui!');
+                table.ajax.reload(null, false);
+            } else {
+                alert(res.message || 'Gagal memperbarui negara tujuan.');
+            }
+        },
+        error: function(err) {
+            console.log(err);
+            alert('Terjadi kesalahan saat memperbarui negara tujuan.');
+        }
+    });
+});
 </script>
 @endsection

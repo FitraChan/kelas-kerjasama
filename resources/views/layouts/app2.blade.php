@@ -35,6 +35,207 @@
     <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet">
     
       <style>
+
+        /* Panel utama */
+.student-action-panel {
+    background: #ffffff;
+    border: 1px solid #e9edf3;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 5px 24px rgba(30, 41, 59, 0.05);
+}
+
+/* Header */
+.student-action-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #edf0f5;
+}
+
+.student-action-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: #e8f7f3;
+    color: #009879;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    flex-shrink: 0;
+}
+
+.student-action-header h5 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #243247;
+}
+
+.student-action-header p {
+    color: #7b8798;
+    font-size: 13px;
+}
+
+/* Grid kartu */
+.student-action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* Kartu aksi */
+.student-action-card {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid #e9edf3;
+    border-radius: 13px;
+    background: #ffffff;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.student-action-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(30, 41, 59, 0.07);
+}
+
+/* Heading kartu */
+.action-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.action-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.action-card-heading h6 {
+    margin: 0 0 5px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #263449;
+}
+
+.action-card-heading small {
+    font-size: 12px;
+    color: #8994a5;
+}
+
+/* Warna ikon */
+.status-card .action-icon {
+    background: #e9f2ff;
+    color: #3478d4;
+}
+
+.negara-card .action-icon {
+    background: #f0eaff;
+    color: #7955c5;
+}
+
+.berangkat-card .action-icon {
+    background: #e5f8ef;
+    color: #159765;
+}
+
+.jenis-card .action-icon {
+    background: #fff2df;
+    color: #d58b25;
+}
+
+/* Form */
+.action-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-card-body .form-control {
+    width: 100%;
+    height: 43px;
+    border: 1px solid #dfe5ed;
+    border-radius: 9px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: #344054;
+    background-color: #ffffff;
+    box-shadow: none;
+}
+
+.action-card-body .form-control:focus {
+    border-color: #00bfa5;
+    box-shadow: 0 0 0 3px rgba(0, 191, 165, 0.10);
+}
+
+/* Tombol */
+.btn-action {
+    width: 100%;
+    min-height: 42px;
+    border: none;
+    border-radius: 9px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.btn-action:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+    color: #ffffff;
+}
+
+.btn-status {
+    background: #3478d4;
+}
+
+.btn-negara {
+    background: #7955c5;
+}
+
+.btn-berangkat {
+    background: #159765;
+}
+
+.btn-jenis {
+    background: #d58b25;
+}
+
+/* Tablet dan HP */
+@media (max-width: 768px) {
+    .student-action-panel {
+        padding: 16px;
+    }
+
+    .student-action-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .student-action-card {
+        padding: 16px;
+    }
+
+    .student-action-header {
+        align-items: flex-start;
+    }
+}
       
       .header-part-right .badge {
             position: absolute;

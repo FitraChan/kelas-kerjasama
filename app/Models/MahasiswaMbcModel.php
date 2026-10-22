@@ -33,6 +33,8 @@ class MahasiswaMbcModel extends Model
         'str_nm_prodi',
         'bol_sts_kelas',
         'id_kuliah_kerja',
+        'id_negara_tujuan',
+        'id_status_berangkat'
     ];
 
     // accessor untuk status aktif
@@ -41,12 +43,32 @@ class MahasiswaMbcModel extends Model
         return $this->bol_sts_kelas == 1 ? 'Aktif' : 'Tidak Aktif';
     }
     
-     public function pendaftaran()
+    public function pendaftaran()
     {
         return $this->belongsTo(
             PendaftaranModel::class,
             'id_kuliah_kerja', // FK di tb_mbc_mahasiswa
             'id'               // PK di pendaftarans
+        );
+    }
+
+    // Relasi negara tujuan
+    public function negaraTujuan()
+    {
+        return $this->belongsTo(
+            NegaraTujuan::class,
+            'id_negara_tujuan',
+            'id'
+        );
+    }
+
+    // Relasi status berangkat
+    public function statusBerangkat()
+    {
+        return $this->belongsTo(
+            StatusBerangkat::class,
+            'id_status_berangkat',
+            'id'
         );
     }
 }
